@@ -9052,6 +9052,11 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 
+.pagebreak {
+  height:30%;
+  background-color: #F2EFEA;
+}
+
 #page1 {
   box-sizing: border-box;
   outline: 50px;
@@ -9113,7 +9118,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 #page3 {
   height:1000px;
-  background-color:yellow;
+  background-color:white;
 }
 
 #page4 {
@@ -9167,7 +9172,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .containerbreak {
-  height: 30%;
+  height: 20%;
 }
 
 /* The sidebar menu */
