@@ -44,6 +44,7 @@
 html {
   font-family: sans-serif;
   line-height: 1.15;
+  scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -ms-overflow-style: scrollbar;
@@ -9111,29 +9112,55 @@ a.text-dark:hover, a.text-dark:focus {
 #page2 {
   height:1000px;
   width:94%;
-  margin-left:3%;
-  margin-top:4%;
   overflow-x: hidden;
+  background-color: white;
 }
 
 #page3 {
   height:1000px;
+  width:94%;
   background-color:white;
 }
 
 #page4 {
   height:1000px;
+  width:94%;
   background-color:orange;
 }
 
 #page5 {
   height:1000px;
+  width:94%;
   background-color:purple;
 }
 
 #homebox {
   width:100px;
   background-color: #83f77b;
+}
+
+.containerdata {
+  width: 1000px;
+}
+
+.containerdata .box {
+  width: 25%;
+  float:left;
+}
+
+.containerdata .box .chart{
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  font-size: 30px;
+}
+
+.container .box canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .hometitle {
@@ -9172,7 +9199,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .containerbreak {
-  height: 20%;
+  height: 10%;
 }
 
 /* The sidebar menu */
