@@ -1,5 +1,3 @@
-// Scroll function courtesy of Scott Dowding; http://stackoverflow.com/questions/487073/check-if-element-is-visible-after-scrolling
-
 $(document).ready(function() {
   // Check if element is scrolled into view
   function isScrolledIntoView(elem) {
@@ -13,33 +11,9 @@ $(document).ready(function() {
   }
   // If element is scrolled into view, fade it in
   $(window).scroll(function() {
-    $('.page2animatetop .animated').each(function() {
+    $('.page2animate .animated').each(function() {
       if (isScrolledIntoView(this) === true) {
-        $(this).addClass('fadeInRight');
-        $(this).addClass('opacityfull');
-      }
-    });
-  });
-});
-
-// Scroll function courtesy of Scott Dowding; http://stackoverflow.com/questions/487073/check-if-element-is-visible-after-scrolling
-
-$(document).ready(function() {
-  // Check if element is scrolled into view
-  function isScrolledIntoView(elem) {
-    var docViewTop = $(window).scrollTop();
-    var docViewBottom = docViewTop + $(window).height();
-
-    var elemTop = $(elem).offset().top;
-    var elemBottom = elemTop + $(elem).height();
-
-    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
-  }
-  // If element is scrolled into view, fade it in
-  $(window).scroll(function() {
-    $('.page2animatebottom .animated').each(function() {
-      if (isScrolledIntoView(this) === true) {
-        $(this).addClass('fadeInLeft');
+        $(this).addClass('fadeInUp');
         $(this).addClass('opacityfull');
       }
     });
@@ -59,14 +33,15 @@ $(document).ready(function() {
   }
   // If element is scrolled into view, fade it in
   $(window).scroll(function() {
-    $('.containerdata .animated').each(function() {
+    $('.resumanim .animated').each(function() {
       if (isScrolledIntoView(this) === true) {
-        $(this).addClass('jackInTheBox');
+        $(this).addClass('fadeInUp');
         $(this).addClass('opacityfull');
       }
     });
   });
 });
+
 
 $(document).ready(function() {
   // Check if element is scrolled into view
@@ -81,28 +56,38 @@ $(document).ready(function() {
   }
   // If element is scrolled into view, fade it in
   $(window).scroll(function() {
-    $('.resumeanim .animated').each(function() {
+    $('.animateproj .animated').each(function() {
       if (isScrolledIntoView(this) === true) {
-        $(this).addClass('fadeInRight');
+        $(this).addClass('fadeInUp');
         $(this).addClass('opacityfull');
       }
     });
   });
 });
 
-var bar = new ProgressBar.Circle(progress, {
-  color: '#FFEA82',
-  trailColor: '#eee',
-  trailWidth: 1,
-  duration: 1400,
-  easing: 'bounce',
-  strokeWidth: 6,
-  from: {color: '#FFEA82', a:0},
-  to: {color: '#ED6A5A', a:1},
-  // Set default step function for all animate calls
-  step: function(state, circle) {
-    circle.path.setAttribute('stroke', state.color);
-  }
+
+$(window).scroll(function(){
+      $(".first").css("opacity", 1 - $(window).scrollTop() / 1000);
 });
 
-bar.animate(1.0);  // Number from 0.0 to 1.0
+function wheel(event) {
+    var delta = 0;
+    if (event.wheelDelta) {(delta = event.wheelDelta / 120);}
+    else if (event.detail) {(delta = -event.detail / 3);}
+
+    handle(delta);
+    if (event.preventDefault) {(event.preventDefault());}
+    event.returnValue = false;
+}
+
+function handle(delta) {
+    var time = 80;
+    var distance = 1000;
+
+    $('html, body').stop().animate({
+        scrollTop: $(window).scrollTop() - (distance * delta)
+    }, time );
+}
+
+if (window.addEventListener) {window.addEventListener('DOMMouseScroll', wheel, false);}
+  window.onmousewheel = document.onmousewheel = wheel;
